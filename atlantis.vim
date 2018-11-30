@@ -31,10 +31,9 @@ let s:yellow1 = '#f2b514'
 " Highlighting function
 function! s:HL(group, fg, bg, attr)
     let l:attr = a:attr
-    if !g:legos_italics_enabled && l:attr ==# 'italic'
+    if !g:atlantis_italics_enabled && l:attr ==# 'italic'
         let l:attr = 'none'
     endif
-
     if !empty(a:fg)
         exec 'hi ' . a:group . ' guifg=' . a:fg
     endif
@@ -87,7 +86,7 @@ call s:HL('SpecialKey', s:green1, s:black1, 'none')
 call s:HL('StatusLine', s:gray1, s:black2, 'none')
 call s:HL('TabLine', s:white1, s:green1, '')
 call s:HL('TabLineFill', s:white1, s:green1, '')
-call s:HL('VertSplit', s:yellow1, s:green1, '')
+call s:HL('VertSplit', s:gray3, s:green1, '')
 call s:HL('Visual', '', s:gray3, 'none')
 
 " Vim docs
@@ -177,11 +176,13 @@ call s:HL('javascriptArrowFunc', s:pink2, '', 'bold')
 call s:HL('javascriptArrowFuncArg', s:blue1, '', 'none')
 call s:HL('javascriptArrowFuncDef', s:pink2, '', 'bold')
 call s:HL('javascriptBlock', s:white1, '', 'none')
-call s:HL('javascriptBraces', s:gray1, '', '')
+call s:HL('javascriptBraces', s:blue2, '', '')
+call s:HL('javascriptClassBlock', s:blue2, '', '')
 call s:HL('javascriptBrackets', s:white1, '', '')
 call s:HL('javascriptClassExtends', s:green1, '', 'none')
 call s:HL('javascriptClassKeyword', s:green1, '', 'none')
 call s:HL('javascriptConditional', s:green1, '', 'none')
+call s:HL('javascriptConditionalElse', s:green1, '', 'none')
 call s:HL('javascriptFuncArg', s:blue1, '', 'none')
 call s:HL('javascriptIdentifier', s:blue4, '', 'none')
 call s:HL('javascriptIdentifierName', s:white1, '', 'none')
@@ -207,7 +208,7 @@ call s:HL('xmlTagName', s:blue3, 'none', 'none')
 call s:HL('xmlAttrib', s:pink3, 'none', 'italic')
 
 " HTML
-call s:HL('htmlArg', s:pink3, 'none', 'none')
+call s:HL('htmlArg', s:pink3, 'none', 'italic')
 call s:HL('htmlEndTag', s:pink1, 'none', 'none')
 call s:HL('htmlLink', s:white1, 'none', 'none')
 call s:HL('htmlSpecialTagName', s:blue3, 'none', 'none')
